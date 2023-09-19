@@ -1,41 +1,34 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
 /**
- * main - print 0 to 99
- *
- *
- * Return: 0
-*/
+ *main - print all combinations of three different digits
+ *Return: Always 0 (Success)
+ */
 
 int main(void)
 {
-	int n1, n2, n3, n4, p1, p2;
+	int one;
+	int ten;
+	int hundred;
 
-	for (p1 = 0; p1 <= 99; p1++)
+	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
 	{
-		for (p2 = p1 + 1; p2 <= 99; p2++)
+		for (ten = (hundred + 1); ten <= '9'; ten++) /*tens=100s+1*/
 		{
-			n1 = (p1 / 10) + 48;
-			n2 = (p1 % 10) + 48;
-			n3 = (p2 / 10) + 48;
-			n4 = (p2 % 10) + 48;
-
-			putchar(n1);
-			putchar(n2);
-			putchar(' ');
-			putchar(n3);
-			putchar(n4);
-
-			if (n1 != '9' || n2 != '8' || n3 != '9' || n4 != '9')
+			for (one = (ten + 1); one <= '9'; one++) /*ones*/
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(hundred);
+				putchar(ten);
+				putchar(one);
+				if (hundred != '7' || ten != '8' || one != '9')
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
-
 	putchar('\n');
+
 	return (0);
 }
