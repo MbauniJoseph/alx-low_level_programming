@@ -1,31 +1,45 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
 /**
- * main - print 0 to 99
+ * main - root function
  *
- *
- * Return: 0
-*/
-
+ * Return: always 0
+ **/
 int main(void)
 {
-	int i, j;
+	int t;
+	int s;
+	int d;
+	int e;
 
-	for (i = '0'; i <= '9'; i++)
+	for (t = 0; t <= 9; t++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		for (s = 0; s <= 9; s++)
 		{
-			putchar(i);
-			putchar(j);
-			if (i != '9' || j != '9')
+			for (d = 0; d <= 9; d++)
 			{
-				putchar(',');
-				putchar(' ');
+				for (e = 0; e <= 9; e++)
+				{
+					if ((t < d) || (t == d && s < e))
+					{
+						putchar(t + '0');
+						putchar(s + '0');
+						putchar(' ');
+						putchar(d + '0');
+						putchar(e + '0');
+
+					if (!(t == 9 && s == 8))
+					{
+						putchar(',');
+						putchar(' ');
+					}
+					}
+				}
 			}
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }
