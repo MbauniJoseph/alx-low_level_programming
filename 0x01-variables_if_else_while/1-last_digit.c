@@ -1,29 +1,33 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
- *main - Entry point, print 00 to 99 using putchar
- *Return: Always 0 (Success)
- */
+ * main - take the last digit of randon number and determinate
+ * if is greater than 5
+ *
+ * Return: 0
+*/
 
 int main(void)
 {
-	int tens;
-	int ones;
+	int n, i;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print tens place*/
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	i = n % 10;
+
+	if (i > 5)
 	{
-		for (ones = '0'; ones <= '9'; ones++) /*print ones place*/
-		{
-			putchar(tens);
-			putchar(ones);
-			if (!(tens == '9' && ones == '9')) /*skip comma at end*/
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+		printf("Last digit of %d is %d and is greater than 5\n", n, i);
 	}
-	putchar('\n');
-
+	else if (i == 0)
+	{
+		printf("Last digit of %d is %d and is 0\n", n, i);
+	}
+	else if (i < 6 && i != 0)
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, i);
+	}
 	return (0);
 }
