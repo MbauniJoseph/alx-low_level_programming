@@ -1,2 +1,1 @@
-0. This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print whether the number stored in the variable n is positive or negative.
-
+Project done during **Full Stack Software Engineering studies** at **ALX School**. It aims to learn about arithmetic operators, relational operators, boolean operators, comments, declaring variables and loops in **C language**.
