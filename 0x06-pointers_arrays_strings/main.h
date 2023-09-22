@@ -92,5 +92,5 @@ char *leet(char *s);
  */
 
 void print_number(int n);
-
+char *rot13(char *);
 #endif
